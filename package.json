@@ -1,0 +1,60 @@
+{
+  "name": "typedorm-examples",
+  "version": "1.0.0",
+  "description": "Examples of using typedorm with different technologies",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint",
+    "docker:up": "docker-compose up --remove-orphans --detach",
+    "docker:down": "docker-compose down"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/typedorm/typedorm-examples.git"
+  },
+  "author": "Rushi Patel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/typedorm/typedorm-examples/issues"
+  },
+  "dependencies": {
+    "@typedorm/common": "1.15.0-alpha.3",
+    "@typedorm/core": "1.15.0-alpha.3",
+    "onetable-cli": "^1.2.2",
+    "reflect-metadata": "^0.1.13",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.1",
+    "aws-sdk": "^2.1092.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.0.3",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "gts": "^3.1.0",
+    "@types/node": "^14.11.2",
+    "@commitlint/config-conventional": "^11.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "keywords": [
+    "typedorm",
+    "typeorm",
+    "DynamoDB",
+    "aws-dynamoDB",
+    "examples",
+    "dynamo db"
+  ],
+  "homepage": "https://github.com/typedorm/typedorm-examples#readme"
+}

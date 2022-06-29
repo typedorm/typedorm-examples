@@ -1,0 +1,28 @@
+{
+  "name": "aws-sdk-v2-typescript-webpack",
+  "version": "1.0.0",
+  "description": "Typescript webpack example with AWS SDK v2",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "prebundle": "npm run build",
+    "bundle": "webpack --config webpack.config.js",
+    "pretest:int": "cd ../../ && npm run docker:up && cd examples/aws-sdk-v2-typescript-webpack && npm run bundle",
+    "test:int": "node ../../dist/examples/aws-sdk-v2-typescript-webpack/bundle/index.js",
+    "posttest:int": "cd ../../ && npm run docker:down && cd examples/aws-sdk-v2-typescript-webpack/"
+  },
+  "dependencies": {
+    "@typedorm/common": "1.15.0-alpha.3",
+    "@typedorm/core": "1.15.0-alpha.3",
+    "@typedorm/document-client": "1.15.0-alpha.3",
+    "aws-sdk": "^2.814.0",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "typescript": "^4.6.2",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
